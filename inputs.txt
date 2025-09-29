@@ -1,0 +1,4 @@
+ls $TMP
+cd aaa
+fff fff
+exit
