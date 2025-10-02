@@ -1,6 +1,6 @@
 ﻿  prototip1.cpp
-C:\Users\Оля\source\repos\prototip1\prototip1.cpp(66,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Оля\source\repos\prototip1\prototip1.cpp(75,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Оля\source\repos\prototip1\prototip1.cpp(80,22): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Оля\source\repos\prototip1\prototip1.cpp(88,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Оля\source\repos\prototip1\prototip1.cpp(77,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Оля\source\repos\prototip1\prototip1.cpp(86,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Оля\source\repos\prototip1\prototip1.cpp(91,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Оля\source\repos\prototip1\prototip1.cpp(99,22): warning C4018: <: несоответствие типов со знаком и без знака
   prototip1.vcxproj -> C:\Users\Оля\source\repos\prototip1\Debug\prototip1.exe

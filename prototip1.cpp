@@ -10,9 +10,13 @@
 using namespace std;
 
 ifstream inf;
+ifstream ins;
 bool stop = true;
+bool script = false;
+vector<string> paths;
 string parser(const char* name);
 void inputManager();
+void CommandSTR(int commands, char* command[]);
 void ls(vector<string> arguments);
 void cd(vector<string> arguments);
 
@@ -48,14 +52,21 @@ void inputManager() {
 
 	vector<string> inputs;
 	string input;
-	getline(inf, input);
+	
+
+	if (script) {
+		getline(inf, input);
+		if (!inf) {
+			stop = false;
+		}
+
+	}
+	else
+	{
+		getline(cin, input);
+	}
 	stringstream ss(input);
 	string word;
-
-	if (!inf) {
-		stop = false;
-	}
-
 	while (ss >> word) {
 		inputs.push_back(word);
 	}
@@ -101,21 +112,45 @@ void inputManager() {
 
 }
 
+void CommandSTR(int commands, char* command[]) {
+	for (int i = 0; i < commands; i++) {
+		paths.push_back(command[i]);
+	}
+}
 
-int main()
+
+int main(int q_commands, char* with_command[])
 {
 	setlocale(LC_ALL, "Russian");
+
+	string VFSname = "";
 	string name;
-	name = "VFS.csv";
-	ifstream ins;
-	ins.open(name);
-	inf.open("inputs.txt", ios::in);
+	CommandSTR(q_commands, with_command);
+	if (q_commands != 1) {
+		for (int i = 1; i < q_commands; i++) {
+			if (paths[i][0] == 'V' && paths[i][1] == 'F' && paths[i][2] == 'S' && VFSname == "") {
+				VFSname = paths[i];
+			}
+			else if (paths[i][0] == '-') {
+				paths[i] = paths[i].substr(1);
+				name = paths[i];
+			}
+			cout << paths[i] << " ";
+		}
+		cout << endl;
+		script = true;
+
+		ins.open(VFSname);
+
+		inf.open(name, ios::in);
+	}
+
 	if (!ins) {
-		cout << "VFS not found";
+		cout << "VFS not found" << endl;
 		return 1;
 	}
 	while (stop) {
-		cout << name << ">> ";
+		cout << VFSname << ">> ";
 		inputManager();
 	}
 	inf.close();

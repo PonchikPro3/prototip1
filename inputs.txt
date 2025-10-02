@@ -1,4 +1,4 @@
 ls $TMP
 cd aaa
-fff fff
+dddd dddd
 exit
